@@ -1,33 +1,18 @@
 <?php
-
 // LETS SEE WHAT HAPPENS
-
 require_once("vendor/autoload.php");
-
 use Bigcommerce\Api\Client as Bigcommerce;
-
-	
-
 	Bigcommerce::configure(array(
 	//	 'store_url' => 'https://api.bigcommerce.com/stores/squ9oe18we/v2/orders',
 		'client_id'		=> '72d8j0kob7u7qnj2836pfscoyvgwdxt',
 		'auth_token'	=> 'c1u6ulb646hbyesix8jocwlruez7jwc',
 		'store_hash'	=> '7etiemt2ez'
 	));
-
 	Bigcommerce::verifyPeer(false);
-
 	$config	= array(
 		"pagination_limit" => 250
 	);
-	
-
-
 /* CONFIG ENDS */
-
-
-
-
 	$ipaddress = '';
 	if (getenv('HTTP_CLIENT_IP'))
 		$ipaddress = getenv('HTTP_CLIENT_IP');
@@ -45,12 +30,7 @@ use Bigcommerce\Api\Client as Bigcommerce;
 		$ipaddress = 'UNKNOWN';
 	
  // get_client_ip
-
-
-
-
-	$product_id=103;
-
+$product_id=103;
 $data= array(
 	'customer_id' =>0,
 	'status_id'=>1,
@@ -77,11 +57,7 @@ $data= array(
 					"email"=>"haider@bigcommerce.com"
 				)
 	);
-	
-
-
 Bigcommerce::failOnError();
-
 try {
     $order = Bigcommerce::createOrder($data);
     print_r($order);
@@ -90,9 +66,4 @@ try {
     echo $error->getCode();
     echo $error->getMessage();
 }
-
-
-	
-	
-
 ?>
