@@ -1,5 +1,7 @@
 <?php
 
+// LETS SEE WHAT HAPPENS
+
 require_once("vendor/autoload.php");
 
 use Bigcommerce\Api\Client as Bigcommerce;
@@ -76,18 +78,6 @@ $data= array(
 				)
 	);
 	
-	
-	
-/*$object = json_encode($data);
-
-	$order = Bigcommerce::createOrder($object);
-
-
-if(!$order){
-	$error = Bigcommerce::getLastError();
-	echo "<pre>";print_r( $error );echo "</pre>";
-}
-*/
 
 
 Bigcommerce::failOnError();
@@ -102,12 +92,6 @@ try {
 }
 
 
-
-
-
-//echo "<pre>";
-//print_r($object);
-//echo "</pre>";
 	
 	
 
