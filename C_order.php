@@ -28,7 +28,6 @@ use Bigcommerce\Api\Client as Bigcommerce;
 		$ipaddress = getenv('REMOTE_ADDR');
 	else
 		$ipaddress = 'UNKNOWN';
-	
  // get_client_ip
 $product_id=103;
 $data= array(
@@ -61,7 +60,6 @@ Bigcommerce::failOnError();
 try {
     $order = Bigcommerce::createOrder($data);
     print_r($order);
-
 } catch(Bigcommerce\Api\Error $error) {
     echo $error->getCode();
     echo $error->getMessage();
